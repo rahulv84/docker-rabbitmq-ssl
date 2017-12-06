@@ -1,0 +1,173 @@
+{
+	"rabbit_version": "3.6.14",
+	"users": [{
+		"name": "dcs_se_dev_user",
+		"password_hash": "uA0y9cGiabuikm07s+RtkYeU2N3u5zCpbF/dAoyFOcvJFeef",
+		"hashing_algorithm": "rabbit_password_hashing_sha256",
+		"tags": "administrator"
+	},
+	{
+		"name": "guest",
+		"password_hash": "JjyP/88XYPpsMngC5zHchhwzfE4U9K+FIhBN50AH7oucSgM5",
+		"hashing_algorithm": "rabbit_password_hashing_sha256",
+		"tags": "administrator"
+	}],
+	"vhosts": [{
+		"name": "/"
+	},
+	{
+		"name": "US"
+	}],
+	"permissions": [{
+		"user": "guest",
+		"vhost": "US",
+		"configure": ".*",
+		"write": ".*",
+		"read": ".*"
+	},
+	{
+		"user": "dcs_se_dev_user",
+		"vhost": "US",
+		"configure": ".*",
+		"write": ".*",
+		"read": ".*"
+	},
+	{
+		"user": "guest",
+		"vhost": "/",
+		"configure": ".*",
+		"write": ".*",
+		"read": ".*"
+	}],
+	"parameters": [],
+	"global_parameters": [{
+		"name": "cluster_name",
+		"value": "rabbit@98cab4ce7c00"
+	}],
+	"policies": [],
+	"queues": [{
+		"name": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.CREATE",
+		"vhost": "US",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {
+			
+		}
+	},
+	{
+		"name": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.LITEUPDATE",
+		"vhost": "US",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {
+			
+		}
+	},
+	{
+		"name": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.LITECREATE",
+		"vhost": "US",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {
+			
+		}
+	},
+	{
+		"name": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.VERIFICATIONINITIATE",
+		"vhost": "US",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {
+			
+		}
+	},
+	{
+		"name": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.DELETE",
+		"vhost": "US",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {
+			
+		}
+	},
+	{
+		"name": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.UPDATE",
+		"vhost": "US",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {
+			
+		}
+	}],
+	"exchanges": [{
+		"name": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"type": "topic",
+		"durable": true,
+		"auto_delete": false,
+		"internal": false,
+		"arguments": {
+			
+		}
+	}],
+	"bindings": [{
+		"source": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"destination": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.CREATE",
+		"destination_type": "queue",
+		"routing_key": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.CREATE",
+		"arguments": {
+			
+		}
+	},
+	{
+		"source": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"destination": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.DELETE",
+		"destination_type": "queue",
+		"routing_key": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.DELETE",
+		"arguments": {
+			
+		}
+	},
+	{
+		"source": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"destination": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.LITECREATE",
+		"destination_type": "queue",
+		"routing_key": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.LITECREATE",
+		"arguments": {
+			
+		}
+	},
+	{
+		"source": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"destination": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.LITEUPDATE",
+		"destination_type": "queue",
+		"routing_key": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.LITEUPDATE",
+		"arguments": {
+			
+		}
+	},
+	{
+		"source": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"destination": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.UPDATE",
+		"destination_type": "queue",
+		"routing_key": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.UPDATE",
+		"arguments": {
+			
+		}
+	},
+	{
+		"source": "NA.US.DCS.SE.TOPIC",
+		"vhost": "US",
+		"destination": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.VERIFICATIONINITIATE",
+		"destination_type": "queue",
+		"routing_key": "NA.US.DCS.SE.CUSTOMER.ACCOUNT.VERIFICATIONINITIATE",
+		"arguments": {
+			
+		}
+	}]
+}
